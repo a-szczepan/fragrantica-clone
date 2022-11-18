@@ -5,12 +5,14 @@ import "./index.css";
 import { LandingPage } from "./pages/LandingPage";
 import { SearchPage } from "./pages/SearchPage";
 import { ProductPage } from "./pages/ProductPage";
+import { Navbar } from "./components/Navbar";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
+    <Navbar />
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />}></Route>
