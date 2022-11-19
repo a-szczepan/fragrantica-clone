@@ -1,4 +1,4 @@
-const icon: string = require("../assets/down.svg").default;
+const arrow: string = require("../assets/down.svg").default;
 
 export const LandingPage = () => {
   return (
@@ -9,7 +9,7 @@ export const LandingPage = () => {
             Welcome to the wonderful world of <span> perfumes</span>
           </h1>
         </div>
-        <img className="down-arrow" src={icon} alt="arrow"></img>
+        <img className="down-arrow" src={arrow} alt="arrow"></img>
       </div>
       <div className="about">
         <h1 className="section-title"> About</h1>
