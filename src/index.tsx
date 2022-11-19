@@ -6,6 +6,7 @@ import { LandingPage } from "./pages/LandingPage";
 import { SearchPage } from "./pages/SearchPage";
 import { ProductPage } from "./pages/ProductPage";
 import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -20,5 +21,6 @@ root.render(
         <Route path="/product/:id" element={<ProductPage />}></Route>
       </Routes>
     </BrowserRouter>
+    <Footer />
   </React.StrictMode>
 );
