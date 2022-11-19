@@ -4,7 +4,6 @@ import { Navigation } from "./Navigation";
 
 export const Header = () => {
   const isMobile = useMobileChecker();
-
   return (
     <header className="header">
       <a className="logo" href="#">
