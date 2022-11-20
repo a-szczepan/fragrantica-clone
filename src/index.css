@@ -158,8 +158,7 @@ hr {
   padding: 0.2rem 0.6rem;
   border-radius: 0.8rem;
 }
-.navigation li a:hover,
-.navigation .drawer-browse-btn:hover {
+.navigation li a:hover {
   color: #ddb77e;
 }
 
@@ -167,8 +166,13 @@ hr {
   background-color: #ddb77e;
   color: black;
 }
+
 .navigation .browse-btn:hover {
   background-color: #d09c4e;
+  color: white;
+}
+.drawer .navigation .browse-btn:hover {
+  color: #ddb77e;
 }
 
 .burger-menu {
