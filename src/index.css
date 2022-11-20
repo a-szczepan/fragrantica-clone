@@ -50,11 +50,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 400;
 }
 
 html {
   font-size: 16px;
-  font-family: "Cormorant", serif;
   background-color: #080810;
   color: white;
   scroll-behavior: smooth;
@@ -119,7 +120,7 @@ hr {
 
 .section-title {
   color: #ddb77e;
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 
 .header-hero,
@@ -239,6 +240,17 @@ hr {
 
 .fixed-body .down-arrow {
   visibility: hidden;
+}
+
+.about-section,
+.explore-section,
+.sources-section {
+  padding-top: 4rem;
+}
+
+.about-section img {
+  width: 50%;
+  object-fit: cover;
 }
 
 .footer {
