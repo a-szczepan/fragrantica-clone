@@ -15,12 +15,14 @@ export const LandingPage = () => {
         <section>
           <h1 className="section-title"> About</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
+            <a href="https://www.fragrantica.com/"> Fragrantica </a> is an
+            online encyclopedia of perfumes. It is created by true perfume
+            lovers for all enthusiasts of exploring the fragrant world. The
+            portal allows you to explore the portfolios of many brands in the
+            perfume industry. Each fragrance contains a list of the
+            composition's ingredients - divided by fragrance notes. Perfumes are
+            also classified by olfactor groups. Therefore allows users to expand
+            their knowledge and compare products with each other.
           </p>
         </section>
         <section>
