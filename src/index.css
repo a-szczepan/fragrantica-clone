@@ -73,12 +73,12 @@ button {
   all: unset;
 }
 
-ul {
-  list-style: none;
+p {
+  font-size: 1.1rem;
 }
 
-p {
-  max-width: 25rem;
+ul {
+  list-style: none;
 }
 
 hr {
@@ -98,6 +98,10 @@ hr {
   background-size: cover;
   display: flex;
   flex-direction: column;
+}
+
+.header-hero p {
+  max-width: 25rem;
 }
 
 .header-hero .header-text {
@@ -121,6 +125,7 @@ hr {
 .section-title {
   color: #ddb77e;
   font-size: 3rem;
+  padding: 3rem 0 1rem 0;
 }
 
 .header-hero,
@@ -242,14 +247,30 @@ hr {
   visibility: hidden;
 }
 
+.section-containter p {
+  max-width: 30rem;
+  text-align: justify;
+}
+
 .about-section,
 .explore-section,
 .sources-section {
-  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-top: 3rem;
+  min-height: 100vh;
+}
+
+.section-containter {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .about-section img {
-  width: 50%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -269,6 +290,18 @@ hr {
   .burger-menu {
     display: none;
   }
+
+  .about-section,
+  .explore-section,
+  .sources-section {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .about-section img {
+    width: 50%;
+    object-fit: cover;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -286,6 +319,9 @@ hr {
   }
   .header-hero .header-text {
     justify-content: right;
+  }
+  .about-section img {
+    width: 30%;
   }
 }
 
