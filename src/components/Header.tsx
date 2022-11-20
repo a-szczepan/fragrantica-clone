@@ -6,7 +6,7 @@ export const Header = () => {
   const isMobile = useMobileChecker();
   return (
     <header className="header">
-      <a className="logo" href="#">
+      <a className="logo" href="/">
         {" "}
         Fragrance{" "}
       </a>

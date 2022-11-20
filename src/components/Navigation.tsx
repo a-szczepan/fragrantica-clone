@@ -7,15 +7,15 @@ export const Navigation = () => {
         </li>
         <li className="divider"> </li>
         <li>
-          <a href="#">About</a>
+          <a href="/">About</a>
         </li>
         <li className="divider"> </li>
         <li>
-          <a href="#">Sources</a>
+          <a href="/">Sources</a>
         </li>
         <li className="divider"> </li>
       </ul>
-      <a className="browse-btn drawer-browse-btn">
+      <a className="browse-btn drawer-browse-btn" href="/search">
         <button>Browse</button>
       </a>
     </nav>
