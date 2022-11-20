@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Navigation } from "./Navigation";
-const menu: string = require("../assets/menu.svg").default;
-const close: string = require("../assets/close.svg").default;
+const menu: string = require("../assets/icons/menu.svg").default;
+const close: string = require("../assets/icons/close.svg").default;
 
 export const Drawer = () => {
   const [open, setOpen] = useState<boolean>(false);

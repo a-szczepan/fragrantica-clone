@@ -1,4 +1,4 @@
-const arrow: string = require("../assets/down.svg").default;
+const arrow: string = require("../assets/icons/down.svg").default;
 
 export const LandingPage = () => {
   return (
