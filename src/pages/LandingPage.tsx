@@ -11,10 +11,12 @@ export const LandingPage = () => {
             Welcome to the wonderful world of <span> perfumes</span>
           </h1>
         </div>
-        <img className="down-arrow" src={arrow} alt="arrow"></img>
+        <a className="down-arrow" href="#about">
+          <img src={arrow} alt="arrow"></img>
+        </a>
       </div>
       <div className="lp-content">
-        <section className="about-section">
+        <section className="about-section" id="about">
           <div className="section-containter">
             <h1 className="section-title"> ABOUT</h1>
             <p>
@@ -42,7 +44,7 @@ export const LandingPage = () => {
             </p>
           </div>
         </section>
-        <section className="sources-section">
+        <section className="sources-section" id="sources">
           <img src={photoB} alt="perfume bottle"></img>
           <div className="section-containter">
             <h1 className="section-title">SOURCES</h1>
