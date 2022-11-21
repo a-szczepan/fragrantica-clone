@@ -32,16 +32,20 @@ export const LandingPage = () => {
           </div>
           <img src={photoA} alt="perfume bottle"></img>
         </section>
-        <section className="explore-section">
+        <section className="explore-section" id="explore">
           <div className="section-containter">
             <h1 className="section-title">EXPLORE</h1>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et quasi architecto beatae vitae
-              dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-              aspernatur aut odit aut fugit
-            </p>
+            <ul>
+              <li>
+                <p>Over 70,000 perfumes in the database</p>
+              </li>
+              <li>
+                <p>Browse the scents of the most popular brands</p>
+              </li>
+              <li>
+                <p>Discover individual niche fragrances</p>
+              </li>
+            </ul>
           </div>
         </section>
         <section className="sources-section" id="sources">

@@ -125,7 +125,12 @@ hr {
 .section-title {
   color: #ddb77e;
   font-size: 3rem;
-  padding: 3rem 0 1rem 0;
+  padding-bottom: 1rem;
+}
+
+.about-section .section-title,
+.sources-section .section-title {
+  padding-top: 3rem;
 }
 
 .header-hero,
@@ -258,13 +263,14 @@ hr {
 }
 
 .about-section,
-.explore-section,
 .sources-section {
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+}
+
+.about-section {
   padding-top: 3rem;
-  min-height: 100vh;
 }
 
 .section-containter {
@@ -272,12 +278,29 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .about-section img,
 .sources-section img {
   width: 100%;
   object-fit: cover;
+}
+
+#explore.explore-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+  min-height: 50vh;
+}
+
+.explore-section ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .list-of-sources {
@@ -338,6 +361,7 @@ hr {
   .about-section img,
   .sources-section img {
     width: 50%;
+    height: 70%;
     object-fit: cover;
   }
 }
@@ -361,6 +385,7 @@ hr {
   .about-section img,
   .sources-section img {
     width: 30%;
+    height: 50%;
   }
 }
 
