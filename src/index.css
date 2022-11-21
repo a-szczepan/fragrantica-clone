@@ -282,12 +282,24 @@ hr {
 
 .list-of-sources {
   padding-top: 1.5rem;
-  gap: 0.5rem;
+  gap: 0.8rem;
+}
+
+.list-of-sources li {
+  align-self: flex-start;
+  width: 100%;
+}
+
+.list-of-sources a {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .list-of-sources span {
   padding-left: 1.5rem;
   font-weight: 700;
+  text-align: right;
 }
 
 .list-of-sources .divider {
@@ -349,10 +361,6 @@ hr {
   .about-section img,
   .sources-section img {
     width: 30%;
-  }
-
-  .list-of-sources .divider {
-    width: 50%;
   }
 }
 
