@@ -139,6 +139,7 @@ hr {
 .lp-content,
 .footer {
   padding: 0.5rem 2rem;
+  width: 100%;
 }
 
 .header,
@@ -299,8 +300,24 @@ hr {
 .explore-section ul {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
   align-items: center;
+  font-size: 1.2rem;
+  text-align: center;
   width: 100%;
+}
+
+.explore-info {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+#perfume-icon {
+  width: 3rem;
 }
 
 .list-of-sources {

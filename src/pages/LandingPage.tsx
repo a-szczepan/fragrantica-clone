@@ -1,6 +1,9 @@
 import photoA from "../assets/images/perfume-bottle.jpg";
 import photoB from "../assets/images/perfume-bottle-2.jpg";
+import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
 const arrow: string = require("../assets/icons/down.svg").default;
+const perfume: string = require("../assets/icons/perfume.svg").default;
 
 export const LandingPage = () => {
   return (
@@ -37,13 +40,29 @@ export const LandingPage = () => {
             <h1 className="section-title">EXPLORE</h1>
             <ul>
               <li>
-                <p>Over 70,000 perfumes in the database</p>
+                <div className="explore-info">
+                  <img id="perfume-icon" src={perfume} alt="perfume"></img>
+                  <CountUp
+                    start={10000}
+                    end={70000}
+                    separator=" "
+                    duration={1.5}
+                    prefix="+"
+                  >
+                    {({ countUpRef, start }) => (
+                      <VisibilitySensor onChange={start} delayedCall>
+                        <span ref={countUpRef} />
+                      </VisibilitySensor>
+                    )}
+                  </CountUp>
+                  <span>perfumes in the database</span>
+                </div>
               </li>
               <li>
-                <p>Browse the scents of the most popular brands</p>
+                <span>Browse the scents of the most popular brands</span>
               </li>
               <li>
-                <p>Discover individual niche fragrances</p>
+                <span>Discover individual niche fragrances</span>
               </li>
             </ul>
           </div>
