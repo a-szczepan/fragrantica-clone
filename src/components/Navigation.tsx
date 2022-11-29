@@ -1,4 +1,8 @@
-export const Navigation = () => {
+type Props = {
+  onClick: () => void;
+};
+
+export const Navigation = ({ onClick }: Props) => {
   return (
     <nav className="navigation">
       <ul>
@@ -7,11 +11,15 @@ export const Navigation = () => {
         </li>
         <li className="divider"> </li>
         <li>
-          <a href="#about">About</a>
+          <a href="#about" onClick={onClick}>
+            About
+          </a>
         </li>
         <li className="divider"> </li>
         <li>
-          <a href="#sources">Sources</a>
+          <a href="#sources" onClick={onClick}>
+            Sources
+          </a>
         </li>
         <li className="divider"> </li>
       </ul>

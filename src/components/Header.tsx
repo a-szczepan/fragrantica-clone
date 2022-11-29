@@ -10,7 +10,7 @@ export const Header = () => {
         {" "}
         Fragrance{" "}
       </a>
-      {screenWidth < 576 ? <Drawer /> : <Navigation />}
+      {screenWidth < 576 ? <Drawer /> : <Navigation onClick={() => {}} />}
     </header>
   );
 };

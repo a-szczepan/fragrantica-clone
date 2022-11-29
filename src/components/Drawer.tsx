@@ -16,9 +16,11 @@ export const Drawer = () => {
     const drawer = document?.getElementById("drawer");
     if (drawer) drawer.style.animation = "drawer-close 2s forwards";
     setTimeout(() => {
-      setOpen(false);
       const root = document.getElementById("root");
       root?.classList.remove("fixed-body");
+      setOpen(false);
+      // eslint-disable-next-line no-self-assign
+      window.location.href = window.location.href;
     }, 1800);
   };
 
@@ -32,7 +34,7 @@ export const Drawer = () => {
           <button onClick={closeDrawer} id="close-drawer-btn">
             <img className="close-btn" src={close} alt="menu"></img>
           </button>
-          <Navigation />
+          <Navigation onClick={closeDrawer} />
         </div>
       ) : null}
     </div>
