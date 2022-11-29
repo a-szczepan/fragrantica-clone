@@ -115,15 +115,19 @@ export const LandingPage = () => {
                 </a>
               </li>
               <li className="divider"> </li>
-              <li>
-                <a href="https://www.google.com/">
-                  Brand logos{" "}
-                  <span>
-                    <a href="https://pl.wikipedia.org/">Wikipedia</a>{" "}
-                    <a href="https://lulua.pl/">Lulua</a>{" "}
-                    <a href="https://impressium.pl/">Impressium</a>
-                  </span>
-                </a>
+              <li id="brands">
+                Brand logos{" "}
+                <div>
+                  <a href="https://pl.wikipedia.org/">
+                    <span>Wikipedia</span>
+                  </a>{" "}
+                  <a href="https://lulua.pl/">
+                    <span>Lulua</span>
+                  </a>{" "}
+                  <a href="https://impressium.pl/">
+                    <span>Impressium</span>
+                  </a>
+                </div>
               </li>
             </ul>
           </div>

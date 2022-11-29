@@ -350,7 +350,8 @@ hr {
   width: 100%;
 }
 
-.list-of-sources a {
+.list-of-sources a,
+#brands {
   display: flex;
   width: 100%;
   justify-content: space-between;
