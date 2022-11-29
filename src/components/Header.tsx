@@ -1,16 +1,16 @@
-import { useMobileChecker } from "../hooks/useMobileChecker";
+import { useWidthChecker } from "../hooks/useMobileChecker";
 import { Drawer } from "./Drawer";
 import { Navigation } from "./Navigation";
 
 export const Header = () => {
-  const isMobile = useMobileChecker();
+  const screenWidth = useWidthChecker();
   return (
     <header className="header">
       <a className="logo" href="/#">
         {" "}
         Fragrance{" "}
       </a>
-      {isMobile ? <Drawer /> : <Navigation />}
+      {screenWidth < 576 ? <Drawer /> : <Navigation />}
     </header>
   );
 };
