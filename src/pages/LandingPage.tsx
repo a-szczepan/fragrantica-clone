@@ -1,10 +1,12 @@
 import photoA from "../assets/images/perfume-bottle.jpg";
 import photoB from "../assets/images/perfume-bottle-2.jpg";
 import CountUp from "react-countup";
+
 import VisibilitySensor from "react-visibility-sensor";
 import { Carousel } from "../components/Carousel";
 import { mainstreamLogo } from "../assets/images/mainstreamLogo";
 import { nicheLogo } from "../assets/images/nicheLogo";
+import { AnimatedImage } from "../components/AnimatedImage";
 const arrow: string = require("../assets/icons/down.svg").default;
 const perfume: string = require("../assets/icons/perfume.svg").default;
 
@@ -36,7 +38,11 @@ export const LandingPage = () => {
               each other.
             </p>
           </div>
-          <img src={photoA} alt="perfume bottle"></img>
+          <AnimatedImage
+            id={"image-left"}
+            image={photoA}
+            animationDirection={"left"}
+          />
         </section>
         <section className="explore-section" id="explore">
           <div className="section-containter">
@@ -77,7 +83,11 @@ export const LandingPage = () => {
           </div>
         </section>
         <section className="sources-section" id="sources">
-          <img src={photoB} alt="perfume bottle"></img>
+          <AnimatedImage
+            id={"image-right"}
+            image={photoB}
+            animationDirection={"right"}
+          />
           <div className="section-containter">
             <h1 className="section-title">SOURCES</h1>
             <p>
