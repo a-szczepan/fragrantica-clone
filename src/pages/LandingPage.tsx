@@ -1,12 +1,10 @@
 import photoA from "../assets/images/perfume-bottle.jpg";
 import photoB from "../assets/images/perfume-bottle-2.jpg";
-import CountUp from "react-countup";
-
-import VisibilitySensor from "react-visibility-sensor";
 import { Carousel } from "../components/Carousel";
 import { mainstreamLogo } from "../assets/images/mainstreamLogo";
 import { nicheLogo } from "../assets/images/nicheLogo";
 import { AnimatedImage } from "../components/AnimatedImage";
+import { Counter } from "../components/Counter";
 const arrow: string = require("../assets/icons/down.svg").default;
 const perfume: string = require("../assets/icons/perfume.svg").default;
 
@@ -51,19 +49,7 @@ export const LandingPage = () => {
               <li>
                 <div className="explore-info">
                   <img id="perfume-icon" src={perfume} alt="perfume"></img>
-                  <CountUp
-                    start={10000}
-                    end={70000}
-                    separator=" "
-                    duration={1.5}
-                    prefix="+"
-                  >
-                    {({ countUpRef, start }) => (
-                      <VisibilitySensor onChange={start} delayedCall>
-                        <span ref={countUpRef} />
-                      </VisibilitySensor>
-                    )}
-                  </CountUp>
+                  <Counter />
                   <span>perfumes in the database</span>
                 </div>
               </li>
