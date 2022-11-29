@@ -2,6 +2,9 @@ import photoA from "../assets/images/perfume-bottle.jpg";
 import photoB from "../assets/images/perfume-bottle-2.jpg";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
+import { Carousel } from "../components/Carousel";
+import { mainstreamLogo } from "../assets/images/mainstreamLogo";
+import { nicheLogo } from "../assets/images/nicheLogo";
 const arrow: string = require("../assets/icons/down.svg").default;
 const perfume: string = require("../assets/icons/perfume.svg").default;
 
@@ -58,11 +61,17 @@ export const LandingPage = () => {
                   <span>perfumes in the database</span>
                 </div>
               </li>
-              <li>
+              <li className="carousel-wrapper">
                 <span>Browse the scents of the most popular brands</span>
+                <div className="carousel">
+                  <Carousel images={mainstreamLogo} reverseDirection={true} />
+                </div>
               </li>
-              <li>
+              <li className="carousel-wrapper">
                 <span>Discover individual niche fragrances</span>
+                <div className="carousel">
+                  <Carousel images={nicheLogo} reverseDirection={false} />
+                </div>
               </li>
             </ul>
           </div>
@@ -103,6 +112,15 @@ export const LandingPage = () => {
               <li>
                 <a href="https://www.svgrepo.com/">
                   Icons <span>SVG REPO</span>
+                </a>
+              </li>
+              <li className="divider"> </li>
+              <li>
+                <a href="https://www.svgrepo.com/">
+                  Brand logos{" "}
+                  <span>
+                    <a>Wikipedia</a> <a>Lulua</a> <a>Impressium</a>
+                  </span>
                 </a>
               </li>
             </ul>

@@ -170,6 +170,7 @@ hr {
   padding: 0.2rem 0.6rem;
   border-radius: 0.8rem;
 }
+
 .navigation li a:hover,
 .list-of-sources span:hover {
   color: #ddb77e;
@@ -282,6 +283,10 @@ hr {
   width: 100%;
 }
 
+.explore-section .section-containter {
+  flex-basis: 100%;
+}
+
 .about-section img,
 .sources-section img {
   width: 100%;
@@ -289,12 +294,11 @@ hr {
 }
 
 #explore.explore-section {
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2.5rem;
-  min-height: 50vh;
+  height: 100vh;
 }
 
 .explore-section ul {
@@ -318,6 +322,22 @@ hr {
 
 #perfume-icon {
   width: 3rem;
+}
+
+.carousel-wrapper {
+  width: 100%;
+}
+
+.carousel {
+  background-color: white;
+  width: 80%;
+  justify-self: center;
+  align-self: center;
+  margin: 2rem auto;
+}
+
+.logo-carousel {
+  width: 100%;
 }
 
 .list-of-sources {
@@ -354,6 +374,26 @@ hr {
   display: none;
   width: 100%;
   height: 3rem;
+}
+
+/* || Swiper */
+
+.slide-wrapper {
+  padding: 0rem 2.5rem !important;
+  display: flex;
+}
+
+.slide {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  height: 100px !important;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #d09c4e !important;
+  transform: scale(80%) !important;
 }
 
 /* || Media queries */
@@ -408,4 +448,7 @@ hr {
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  .carousel {
+    width: 60%;
+  }
 }
