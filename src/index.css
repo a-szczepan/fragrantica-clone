@@ -71,6 +71,7 @@ body {
 a,
 button {
   all: unset;
+  cursor: pointer;
 }
 
 p {
@@ -147,6 +148,7 @@ hr {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
 }
 
 .header {
@@ -252,7 +254,6 @@ hr {
   align-self: center;
   width: 3rem;
   animation: down-arrow 4s ease infinite;
-  cursor: pointer;
 }
 
 .fixed-body .down-arrow {
@@ -372,9 +373,16 @@ hr {
 }
 
 .footer {
-  display: none;
+  background-color: #d09c4e;
+  color: #080810;
   width: 100%;
-  height: 3rem;
+  margin-top: 3rem;
+  height: 5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 /* || Swiper */
