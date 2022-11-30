@@ -27,7 +27,7 @@ export const Drawer = () => {
       </button>
       {scrollPrevention ? (
         <div className="drawer" id="drawer">
-          <button onClick={closeDrawer} id="close-drawer-btn">
+          <button onClick={closeDrawer}>
             <img className="close-btn" src={close} alt="menu"></img>
           </button>
           <Navigation onClick={closeDrawer} />
