@@ -7,20 +7,23 @@ import { SearchPage } from "./pages/SearchPage";
 import { ProductPage } from "./pages/ProductPage";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { FilteringContextProvider } from "./context/FilteringContextProvider";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Header />
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/search" element={<SearchPage />}></Route>
-        <Route path="/product/:id" element={<ProductPage />}></Route>
-      </Routes>
-    </BrowserRouter>
-    <Footer />
+    <FilteringContextProvider>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />}></Route>
+          <Route path="/search" element={<SearchPage />}></Route>
+          <Route path="/product/:id" element={<ProductPage />}></Route>
+        </Routes>
+      </BrowserRouter>
+      <Footer />
+    </FilteringContextProvider>
   </React.StrictMode>
 );
