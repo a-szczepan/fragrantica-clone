@@ -1,4 +1,4 @@
-type Gender = "male" | "female" | "unisex" | undefined;
+type Gender = "male" | "female" | "unisex";
 
 type State = {
   gender: Gender[];
