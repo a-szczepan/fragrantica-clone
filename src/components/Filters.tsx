@@ -22,7 +22,7 @@ export const Filters = () => {
       },
     });
     console.log(context);
-  }, []);
+  }, [context?.state.gender]);
 
   return (
     <ul className="filters">

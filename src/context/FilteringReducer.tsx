@@ -15,9 +15,9 @@ export function filteringReducer(state: State, action: Action): State {
     stateProperty: Gender[] | string[],
     value: Gender | string
   ) {
-    function fun(element: Gender | string) {
-      return element !== value;
-    }
+    // function fun(element: Gender | string) {
+    //   return element !== value;
+    // }
     //stateProperty = stateProperty.filter((ele: string) => ele !== value)
 
     if (stateProperty.includes(value as never)) {

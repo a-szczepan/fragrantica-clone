@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import ReactDom from "react-dom";
 import { Filters } from "./Filters";
 const close: string = require("../assets/icons/close.svg").default;
