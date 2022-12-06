@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Checkbox } from "./Checkbox";
+import { FilteringContext } from "../context/FilteringContextProvider";
 
 const arrowDown: string = require("../assets/icons/down.svg").default;
 const arrowUp: string = require("../assets/icons/up.svg").default;
@@ -31,6 +32,7 @@ const groups: string[] = [
 ];
 
 export const Filters = () => {
+  const context = useContext(FilteringContext);
   const [genderFilterVisibility, setGenderFilterVisibility] =
     useState<boolean>(false);
   const [brandFilterVisibility, setBrandFilterVisibility] =
@@ -42,7 +44,12 @@ export const Filters = () => {
     <fieldset className="filters">
       <div>
         <div className="filter-option">
-          <label>Gender</label>{" "}
+          <div>
+            <label>Gender</label>{" "}
+            {context?.state.gender.length! > 0 ? (
+              <label>({context?.state.gender.length})</label>
+            ) : null}
+          </div>
           <button
             type="button"
             onClick={() => setGenderFilterVisibility(!genderFilterVisibility)}
@@ -68,7 +75,12 @@ export const Filters = () => {
         <hr className="divider"></hr>
       </div>
       <div className="filter-option">
-        <label>Brand</label>
+        <div>
+          <label>Brand</label>{" "}
+          {context?.state.brand.length! > 0 ? (
+            <label>({context?.state.brand.length})</label>
+          ) : null}
+        </div>
         <button
           type="button"
           onClick={() => setBrandFilterVisibility(!brandFilterVisibility)}
@@ -88,7 +100,12 @@ export const Filters = () => {
       </div>
       <hr className="divider"></hr>
       <div className="filter-option">
-        <label>Group</label>
+        <div>
+          <label>Group</label>{" "}
+          {context?.state.group.length! > 0 ? (
+            <label>({context?.state.group.length})</label>
+          ) : null}
+        </div>
         <button
           type="button"
           onClick={() => setGroupFilterVisibility(!groupFilterVisibility)}
