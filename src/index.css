@@ -475,6 +475,10 @@ hr {
   gap: 1rem;
 }
 
+input[type="checkbox"] {
+  accent-color: #ddb77e;
+}
+
 /* || Swiper */
 
 .slide-wrapper {
