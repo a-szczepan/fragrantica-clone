@@ -13,6 +13,13 @@ const brands: string[] = [
   "Imaginary Autors",
   "Amouage",
   "Gallivant",
+  "Dior",
+  "Versace",
+  "Prada",
+  "Chanel",
+  "Imaginary Autors",
+  "Amouage",
+  "Gallivant",
 ];
 const groups: string[] = [
   "woody",
