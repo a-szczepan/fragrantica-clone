@@ -435,6 +435,7 @@ hr {
   height: 1px;
   background-color: rgb(255, 255, 255);
 }
+
 .modal img {
   width: 2rem;
 }
@@ -448,6 +449,14 @@ hr {
 .filters {
   padding: 0 2rem;
 }
+
+.filter-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem 0;
+}
+
 /* || Swiper */
 
 .slide-wrapper {

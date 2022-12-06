@@ -22,12 +22,12 @@ export const Filters = () => {
       },
     });
     console.log(context);
-  }, [context?.state.gender]);
+  }, []);
 
   return (
     <ul className="filters">
       <li>
-        <div>
+        <div className="filter-option">
           <span>Gender</span>{" "}
           <button
             onClick={() => setGenderFilterVisibility(!genderFilterVisibility)}
@@ -45,19 +45,23 @@ export const Filters = () => {
         <hr className="divider"></hr>
       </li>
       <li>
-        <span>Brand</span>
-        <button>
-          <img src={arrow} alt="arrow"></img>
-        </button>
+        <div className="filter-option">
+          <span>Brand</span>
+          <button>
+            <img src={arrow} alt="arrow"></img>
+          </button>
+        </div>
       </li>
       <li>
         <hr className="divider"></hr>
       </li>
       <li>
-        <span>Group</span>
-        <button>
-          <img src={arrow} alt="arrow"></img>
-        </button>
+        <div className="filter-option">
+          <span>Group</span>
+          <button>
+            <img src={arrow} alt="arrow"></img>
+          </button>
+        </div>
       </li>
     </ul>
   );
