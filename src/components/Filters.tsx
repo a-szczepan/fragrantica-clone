@@ -51,7 +51,12 @@ export const Filters = () => {
         <div className="option-wrapper">
           {genderFilterVisibility
             ? gender.map((element, index) => (
-                <Checkbox key={index} id={element} label={element} />
+                <Checkbox
+                  key={index}
+                  id={element}
+                  name="gender"
+                  label={element}
+                />
               ))
             : null}
         </div>
@@ -72,7 +77,7 @@ export const Filters = () => {
       <div className="option-wrapper">
         {brandFilterVisibility
           ? brands.map((element, index) => (
-              <Checkbox key={index} id={element} label={element} />
+              <Checkbox key={index} id={element} name="brand" label={element} />
             ))
           : null}
       </div>
@@ -92,7 +97,7 @@ export const Filters = () => {
       <div className="option-wrapper">
         {groupFilterVisibility
           ? groups.map((element, index) => (
-              <Checkbox key={index} id={element} label={element} />
+              <Checkbox key={index} id={element} name="group" label={element} />
             ))
           : null}
       </div>

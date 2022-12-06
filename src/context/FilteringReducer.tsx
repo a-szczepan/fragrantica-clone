@@ -1,3 +1,5 @@
+import { State, Action, Gender } from "../types/shared";
+
 export function filteringReducer(state: State, action: Action): State {
   switch (action.type) {
     case "ADD_GENDER": {
@@ -19,7 +21,9 @@ export function filteringReducer(state: State, action: Action): State {
         if (state.gender.includes(gender)) {
           return {
             ...state,
-            gender: state.gender.filter((element) => element !== gender),
+            gender: state.gender.filter(
+              (element: Gender) => element !== gender
+            ),
           };
         } else {
           return state;
@@ -47,7 +51,7 @@ export function filteringReducer(state: State, action: Action): State {
         if (state.brand.includes(brand)) {
           return {
             ...state,
-            brand: state.brand.filter((element) => element !== brand),
+            brand: state.brand.filter((element: string) => element !== brand),
           };
         } else {
           return state;
@@ -75,7 +79,7 @@ export function filteringReducer(state: State, action: Action): State {
         if (state.group.includes(group)) {
           return {
             ...state,
-            group: state.group.filter((element) => element !== group),
+            group: state.group.filter((element: string) => element !== group),
           };
         } else {
           return state;
