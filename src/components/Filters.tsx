@@ -1,68 +1,101 @@
 import { useState, useContext, useEffect } from "react";
 import { FilteringContext } from "../context/FilteringContextProvider";
-const arrow: string = require("../assets/icons/down.svg").default;
+import { Checkbox } from "./Checkbox";
+
+const arrowDown: string = require("../assets/icons/down.svg").default;
+const arrowUp: string = require("../assets/icons/up.svg").default;
+
+const gender: string[] = ["male", "female", "unisex"];
+const brands: string[] = [
+  "Dior",
+  "Versace",
+  "Prada",
+  "Chanel",
+  "Imaginary Autors",
+  "Amouage",
+  "Gallivant",
+];
+const groups: string[] = [
+  "woody",
+  "floral",
+  "leather",
+  "citrus",
+  "amber",
+  "aromatic",
+];
 
 export const Filters = () => {
   const context = useContext(FilteringContext);
   const [genderFilterVisibility, setGenderFilterVisibility] =
     useState<boolean>(false);
-
-  useEffect(() => {
-    context?.dispatch({
-      type: "ADD_GENDER",
-      payload: {
-        gender: "female",
-      },
-    });
-    console.log(context);
-    context?.dispatch({
-      type: "DELETE_GENDER",
-      payload: {
-        gender: "female",
-      },
-    });
-    console.log(context);
-  }, []);
+  const [brandFilterVisibility, setBrandFilterVisibility] =
+    useState<boolean>(false);
+  const [groupFilterVisibility, setGroupFilterVisibility] =
+    useState<boolean>(false);
 
   return (
-    <ul className="filters">
-      <li>
+    <fieldset className="filters">
+      <div>
         <div className="filter-option">
-          <span>Gender</span>{" "}
+          <label>Gender</label>{" "}
           <button
+            type="button"
             onClick={() => setGenderFilterVisibility(!genderFilterVisibility)}
           >
-            <img src={arrow} alt="arrow"></img>
+            <img
+              src={genderFilterVisibility ? arrowUp : arrowDown}
+              alt="arrow"
+            ></img>
           </button>
         </div>
-        {genderFilterVisibility ? (
-          <div>
-            <h1>Test</h1>
-          </div>
-        ) : null}
-      </li>
-      <li>
+        <div className="option-wrapper">
+          {genderFilterVisibility
+            ? gender.map((element, index) => (
+                <Checkbox key={index} id={element} label={element} />
+              ))
+            : null}
+        </div>
         <hr className="divider"></hr>
-      </li>
-      <li>
-        <div className="filter-option">
-          <span>Brand</span>
-          <button>
-            <img src={arrow} alt="arrow"></img>
-          </button>
-        </div>
-      </li>
-      <li>
-        <hr className="divider"></hr>
-      </li>
-      <li>
-        <div className="filter-option">
-          <span>Group</span>
-          <button>
-            <img src={arrow} alt="arrow"></img>
-          </button>
-        </div>
-      </li>
-    </ul>
+      </div>
+      <div className="filter-option">
+        <label>Brand</label>
+        <button
+          type="button"
+          onClick={() => setBrandFilterVisibility(!brandFilterVisibility)}
+        >
+          <img
+            src={brandFilterVisibility ? arrowUp : arrowDown}
+            alt="arrow"
+          ></img>
+        </button>
+      </div>
+      <div className="option-wrapper">
+        {brandFilterVisibility
+          ? brands.map((element, index) => (
+              <Checkbox key={index} id={element} label={element} />
+            ))
+          : null}
+      </div>
+      <hr className="divider"></hr>
+      <div className="filter-option">
+        <label>Group</label>
+        <button
+          type="button"
+          onClick={() => setGroupFilterVisibility(!groupFilterVisibility)}
+        >
+          <img
+            src={groupFilterVisibility ? arrowUp : arrowDown}
+            alt="arrow"
+          ></img>
+        </button>
+      </div>
+      <div className="option-wrapper">
+        {groupFilterVisibility
+          ? groups.map((element, index) => (
+              <Checkbox key={index} id={element} label={element} />
+            ))
+          : null}
+      </div>
+    </fieldset>
   );
 };

@@ -11,14 +11,16 @@ export const FilteringModal = ({ open, onClose }: Props) => {
   return ReactDom.createPortal(
     <div className="modal-wrapper">
       <div className="modal">
-        <div className="modal-header-wrapper">
-          <h2>Filters</h2>
-          <button onClick={onClose}>
-            <img className="close-btn" src={close} alt="menu"></img>
-          </button>
-        </div>
-        <hr className="divider"></hr>
-        <Filters />
+        <form>
+          <div className="modal-header-wrapper">
+            <h2>Filters</h2>
+            <button onClick={onClose}>
+              <img className="close-btn" src={close} alt="menu"></img>
+            </button>
+          </div>
+          <hr className="divider"></hr>
+          <Filters />
+        </form>
       </div>
     </div>,
     document.getElementById("portal")!
