@@ -1,5 +1,4 @@
-import { useState, useContext, useEffect } from "react";
-import { FilteringContext } from "../context/FilteringContextProvider";
+import { useState } from "react";
 import { Checkbox } from "./Checkbox";
 
 const arrowDown: string = require("../assets/icons/down.svg").default;
@@ -25,7 +24,6 @@ const groups: string[] = [
 ];
 
 export const Filters = () => {
-  const context = useContext(FilteringContext);
   const [genderFilterVisibility, setGenderFilterVisibility] =
     useState<boolean>(false);
   const [brandFilterVisibility, setBrandFilterVisibility] =
