@@ -1,4 +1,4 @@
-import { useWidthChecker } from "../hooks/useMobileChecker";
+import { useWidthChecker } from "../hooks/useWidthChecker";
 import { Navigation, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";

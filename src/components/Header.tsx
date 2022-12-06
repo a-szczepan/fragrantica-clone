@@ -1,4 +1,4 @@
-import { useWidthChecker } from "../hooks/useMobileChecker";
+import { useWidthChecker } from "../hooks/useWidthChecker";
 import { Drawer } from "./Drawer";
 import { Navigation } from "./Navigation";
 
