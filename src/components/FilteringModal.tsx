@@ -19,7 +19,7 @@ export const FilteringModal = ({ open, onClose }: Props) => {
             </button>
           </div>
           <hr className="divider"></hr>
-          <Filters />
+          <Filters isDesktop={false} />
         </form>
       </div>
     </div>,
