@@ -97,7 +97,7 @@ body {
 
 a,
 button,
-input {
+input[type="search"] {
   all: unset;
   cursor: pointer;
 }
@@ -454,15 +454,22 @@ hr {
     0px 7px 8px -4px hsla(0, 0%, 0%, 0.2);
 }
 
-.modal hr {
+.filtering-panel {
+  flex-basis: 30%;
+  width: 100%;
+}
+
+.modal hr,
+.filtering-panel hr {
   display: block;
   border: none;
   height: 1px;
   background-color: rgb(255, 255, 255);
 }
 
-.modal img {
-  width: 1.4rem;
+.modal img,
+.filtering-panel img {
+  width: 1.2rem;
 }
 
 .modal-header-wrapper {
@@ -471,12 +478,20 @@ hr {
   padding: 1rem 2rem;
 }
 
+.panel-header-wrapper {
+  font-size: 1.4rem;
+}
+
 .filters {
   width: 100%;
 }
 
 .filters .divider {
   margin: 0.3rem 2rem;
+}
+
+.filtering-panel .divider {
+  margin: 0;
 }
 
 .filter-option {
@@ -498,6 +513,10 @@ hr {
   gap: 1rem;
 }
 
+.filtering-panel .option {
+  padding: 0.2rem 2rem;
+}
+
 input[type="checkbox"] {
   accent-color: #ddb77e;
 }
@@ -505,6 +524,15 @@ input[type="checkbox"] {
 .mobile-view,
 .desktop-view {
   width: 100%;
+}
+
+.desktop-view {
+  display: flex;
+  gap: 3%;
+}
+
+.content-wrapper {
+  flex-basis: 70%;
 }
 
 .serach-bar form {
@@ -524,13 +552,13 @@ input[type="checkbox"] {
   padding: 0.5rem 0 1rem 0;
 }
 
-.serach-bar input,
-.serach-bar input:focus {
+.serach-bar input[type="search"],
+.serach-bar input[type="search"]:focus {
   border: none;
   background-color: transparent;
 }
 
-.serach-bar input {
+.serach-bar input[type="search"] {
   border-bottom: 1px solid #f5f5f5;
   padding: 0.2rem 0.5rem;
   width: 100%;
@@ -547,7 +575,7 @@ input[type="checkbox"] {
   transition: all 0.3s linear;
 }
 
-input:focus + .separator {
+input[type="search"]:focus + .separator {
   transform: scaleX(1) translateY(-1px);
   opacity: 1;
 }
@@ -652,6 +680,7 @@ input:focus + .separator {
   .carousel {
     width: 60%;
   }
+
   .view-container {
     display: flex;
     justify-content: center;
@@ -661,5 +690,13 @@ input:focus + .separator {
   #image-right {
     width: 70%;
     height: 90%;
+  }
+
+  .filtering-panel {
+    flex-basis: 20%;
+  }
+
+  .content-wrapper {
+    flex-basis: 80%;
   }
 }

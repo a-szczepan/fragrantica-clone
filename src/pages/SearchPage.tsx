@@ -1,5 +1,4 @@
 import { FilteringPanel } from "../components/FilteringPanel";
-import { Filters } from "../components/Filters";
 import { Products } from "../components/Products";
 import { SearchBar } from "../components/SearchBar";
 import { useWidthChecker } from "../hooks/useWidthChecker";
@@ -17,8 +16,10 @@ export const SearchPage = () => {
       ) : (
         <div className="desktop-view">
           <FilteringPanel />
-          <SearchBar />
-          <Products />
+          <div className="content-wrapper">
+            <SearchBar />
+            <Products />
+          </div>
         </div>
       )}
     </div>
