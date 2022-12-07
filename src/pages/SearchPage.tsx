@@ -1,21 +1,26 @@
-import { FilteringModal } from "../components/FilteringModal";
+import { FilteringPanel } from "../components/FilteringPanel";
 import { Filters } from "../components/Filters";
-import { useScrollPrevention } from "../hooks/useScrollPrevention";
-const filter: string = require("../assets/icons/filter.svg").default;
+import { Products } from "../components/Products";
+import { SearchBar } from "../components/SearchBar";
+import { useWidthChecker } from "../hooks/useWidthChecker";
+
 export const SearchPage = () => {
-  const [scrollPrevention, setScrollPrevention] = useScrollPrevention(false);
+  const width = useWidthChecker();
 
   return (
     <div className="searchPage">
-      <button onClick={() => setScrollPrevention(true)}>
-        <img src={filter} alt="filter"></img>
-      </button>
-      {scrollPrevention ? (
-        <FilteringModal
-          open={scrollPrevention}
-          onClose={() => setScrollPrevention(false)}
-        />
-      ) : null}
+      {width < 576 ? (
+        <div className="mobile-view">
+          <SearchBar />
+          <Products />
+        </div>
+      ) : (
+        <div className="desktop-view">
+          <FilteringPanel />
+          <SearchBar />
+          <Products />
+        </div>
+      )}
     </div>
   );
 };

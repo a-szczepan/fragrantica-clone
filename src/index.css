@@ -96,7 +96,8 @@ body {
 }
 
 a,
-button {
+button,
+input {
   all: unset;
   cursor: pointer;
 }
@@ -169,6 +170,8 @@ hr {
 .header,
 .drawer,
 .lp-content,
+.mobile-view,
+.desktop-view,
 .footer {
   padding: 0.5rem 2rem;
   width: 100%;
@@ -243,7 +246,7 @@ hr {
 }
 
 .drawer .close-btn {
-  width: 2.5rem;
+  width: 1.5rem;
 }
 
 .drawer .navigation {
@@ -424,7 +427,11 @@ hr {
 .searchPage {
   height: 100vh;
   display: flex;
-  justify-content: center;
+  padding-top: 3.375rem;
+}
+
+.searchPage button {
+  height: 2rem;
 }
 
 .modal-wrapper {
@@ -493,6 +500,71 @@ hr {
 
 input[type="checkbox"] {
   accent-color: #ddb77e;
+}
+
+.mobile-view,
+.desktop-view {
+  width: 100%;
+}
+
+.serach-bar form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+::placeholder {
+  color: #cfcaca;
+}
+
+.input-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0 1rem 0;
+}
+
+.serach-bar input,
+.serach-bar input:focus {
+  border: none;
+  background-color: transparent;
+}
+
+.serach-bar input {
+  border-bottom: 1px solid #f5f5f5;
+  padding: 0.2rem 0.5rem;
+  width: 100%;
+}
+
+.separator {
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: #d09c4e;
+  transform: scaleX(0) translateY(-2px);
+  transform-origin: 50%;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+input:focus + .separator {
+  transform: scaleX(1) translateY(-1px);
+  opacity: 1;
+}
+
+.search-btn,
+.filter-btn {
+  display: flex;
+}
+
+.search-btn img {
+  width: 1.2rem;
+  margin-left: 0.7rem;
+}
+
+.filter-btn img {
+  width: 2rem;
+  margin-left: 0.7rem;
 }
 
 /* || Swiper */
