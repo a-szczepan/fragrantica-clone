@@ -31,14 +31,18 @@ const groups: string[] = [
   "aromatic",
 ];
 
-export const Filters = () => {
+type Props = {
+  isDesktop: boolean;
+};
+
+export const Filters = ({ isDesktop }: Props) => {
   const context = useContext(FilteringContext);
   const [genderFilterVisibility, setGenderFilterVisibility] =
-    useState<boolean>(false);
+    useState<boolean>(isDesktop);
   const [brandFilterVisibility, setBrandFilterVisibility] =
-    useState<boolean>(false);
+    useState<boolean>(isDesktop);
   const [groupFilterVisibility, setGroupFilterVisibility] =
-    useState<boolean>(false);
+    useState<boolean>(isDesktop);
 
   return (
     <fieldset className="filters">
