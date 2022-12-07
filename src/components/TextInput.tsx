@@ -4,7 +4,11 @@ export const TextInput = () => {
   return (
     <form>
       <div>
-        <input className="search-input" placeholder="Search..."></input>
+        <input
+          type="search"
+          className="search-input"
+          placeholder="Search..."
+        ></input>
         <span className="separator"></span>
       </div>
       <button className="search-btn" type="submit">
