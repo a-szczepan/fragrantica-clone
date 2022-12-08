@@ -1,35 +1,10 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect, useCallback } from "react";
 import { Checkbox } from "./Checkbox";
 import { FilteringContext } from "../context/FilteringContextProvider";
-
+import { getBrands, getGroups } from "../utils/api";
 const arrowDown: string = require("../assets/icons/down.svg").default;
 const arrowUp: string = require("../assets/icons/up.svg").default;
-
 const gender: string[] = ["male", "female", "unisex"];
-const brands: string[] = [
-  "Dior",
-  "Versace",
-  "Prada",
-  "Chanel",
-  "Imaginary Autors",
-  "Amouage",
-  "Gallivant",
-  "Dior",
-  "Versace",
-  "Prada",
-  "Chanel",
-  "Imaginary Autors",
-  "Amouage",
-  "Gallivant",
-];
-const groups: string[] = [
-  "woody",
-  "floral",
-  "leather",
-  "citrus",
-  "amber",
-  "aromatic",
-];
 
 type Props = {
   isDesktop: boolean;
@@ -37,12 +12,27 @@ type Props = {
 
 export const Filters = ({ isDesktop }: Props) => {
   const context = useContext(FilteringContext);
+  const [brands, setBrands] = useState<string[]>([]);
+  const [groups, setGroups] = useState<string[]>([]);
   const [genderFilterVisibility, setGenderFilterVisibility] =
     useState<boolean>(isDesktop);
   const [brandFilterVisibility, setBrandFilterVisibility] =
     useState<boolean>(isDesktop);
   const [groupFilterVisibility, setGroupFilterVisibility] =
     useState<boolean>(isDesktop);
+
+  useEffect(() => {
+    const fetchBrands = async () => {
+      const res = await getBrands();
+      setBrands(await res.json());
+    };
+    const fetchGroups = async () => {
+      const res = await getGroups();
+      setGroups(await res.json());
+    };
+    fetchBrands();
+    fetchGroups();
+  }, []);
 
   return (
     <fieldset className="filters">
