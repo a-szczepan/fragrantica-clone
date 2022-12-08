@@ -1,4 +1,4 @@
-export type Gender = "male" | "female" | "unisex";
+export type Gender = "men" | "women" | "unisex";
 
 export type State = {
   gender: Gender[];
