@@ -15,3 +15,14 @@ export const getGroups = async (): Promise<Response> => {
   };
   return await fetch(`${url}/groups`, options);
 };
+
+export const getPerfumesPage = async (
+  page: number,
+  limit: number
+): Promise<Response> => {
+  const options: RequestInit = {
+    method: "GET",
+    mode: "cors",
+  };
+  return await fetch(`${url}/perfumes?_page=${page}&_limit=${limit}`, options);
+};
