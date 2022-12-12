@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect, useCallback } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Checkbox } from "./Checkbox";
 import { FilteringContext } from "../context/FilteringContextProvider";
 import { getBrands, getGroups } from "../utils/api";
