@@ -25,3 +25,39 @@ export type Action = {
   type: ActionType;
   payload: Payload;
 };
+
+export type Accord = {
+  accord: string;
+  value: number;
+};
+
+export type Note = {
+  note: string;
+  photo: string;
+};
+
+export type Product = {
+  id: number;
+  photo: string;
+  gender: Gender;
+  name: string;
+  brand: string;
+  mainAccords: Accord[];
+  rating: {
+    average: number;
+    amount: number;
+  };
+  occasions: {
+    day: number;
+    night: number;
+    spring: number;
+    summer: number;
+    amount: number;
+    winter: number;
+  };
+  notes: {
+    top?: Note[];
+    heart?: Note[];
+    base?: Note[];
+  };
+};

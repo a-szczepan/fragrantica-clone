@@ -27,7 +27,9 @@ export const SearchBar = () => {
           ) : null}{" "}
         </div>
       ) : (
-        <TextInput />
+        <div className="input-wrapper">
+          <TextInput />
+        </div>
       )}
     </div>
   );
