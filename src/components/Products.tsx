@@ -6,7 +6,7 @@ import { ProductCard } from "./ProductCard";
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
-  const [paginationLimit] = useState<number>(10);
+  const [paginationLimit] = useState<number>(20);
   const [searchParams] = useSearchParams();
   const [page, setPage] = useState<number>(1);
 
