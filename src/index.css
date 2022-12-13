@@ -646,10 +646,17 @@ input[type="search"]:focus + .separator {
 
 .pagination {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
-  background-color: crimson;
   font-size: 1.1rem;
+  width: 100%;
+  gap: 0.3rem;
+}
+
+.pagination li {
+  width: 26px;
+  display: flex;
+  justify-content: center;
 }
 
 .pagination span {
@@ -717,6 +724,10 @@ input[type="search"]:focus + .separator {
 
   .option-wrapper {
     max-height: 17vh;
+  }
+
+  .pagination {
+    justify-content: center;
   }
 }
 
