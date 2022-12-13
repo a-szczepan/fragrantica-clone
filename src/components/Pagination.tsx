@@ -25,7 +25,7 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
 
   function handleRedirect(event: React.MouseEvent, page: number) {
     event.preventDefault();
-    console.log("handle", page);
+    console.log("tu", page);
     setSearchParams({ page: String(page) });
   }
 
@@ -49,19 +49,35 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
                 {currentPage > 1
                   ? Array.from(Array(paginationEnd - 1).keys())
                       .slice(0, currentPage - 1)
-                      .map((element) => <li>{element + 1}&nbsp;</li>)
+                      .map((element, index) => (
+                        <li key={index}>
+                          <a
+                            href={`/search?page=${element + 1}`}
+                            onClick={(e) => handleRedirect(e, element + 1)}
+                          >
+                            {element + 1}
+                          </a>
+                        </li>
+                      ))
                   : null}
-                <li>
-                  <span>
-                    {currentPage < paginationEnd ? (
-                      <>{currentPage}&nbsp;</>
-                    ) : null}
-                  </span>
-                </li>
+                {currentPage < paginationEnd ? (
+                  <li>
+                    <a href={`/search?page=${currentPage}`}>
+                      <span>{currentPage}</span>
+                    </a>
+                  </li>
+                ) : null}
                 {Array.from(Array(paginationEnd - 1).keys())
                   .slice(currentPage, paginationEnd - 1)
-                  .map((element) => (
-                    <li>{element + 1}&nbsp;</li>
+                  .map((element, index) => (
+                    <li key={index}>
+                      <a
+                        href={`/search?page=${element + 1}`}
+                        onClick={(e) => handleRedirect(e, element + 1)}
+                      >
+                        {element + 1}
+                      </a>
+                    </li>
                   ))}
               </>
             );
@@ -71,76 +87,150 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
                 <>
                   {Array.from(Array(7).keys())
                     .slice(0, currentPage - 1)
-                    .map((element) => (
-                      <li>{element + 1}&nbsp;</li>
+                    .map((element, index) => (
+                      <li key={index}>
+                        <a
+                          href={`/search?page=${element + 1}`}
+                          onClick={(e) => handleRedirect(e, element + 1)}
+                        >
+                          {element + 1}
+                        </a>
+                      </li>
                     ))}
                   <li>
-                    <span>{currentPage}</span>&nbsp;
+                    <a href={`/search?page=${currentPage}`}>
+                      <span>{currentPage}</span>
+                    </a>
                   </li>
                   {Array.from(Array(7).keys())
                     .slice(currentPage, 7)
-                    .map((element) => (
-                      <li>{element + 1}&nbsp;</li>
+                    .map((element, index) => (
+                      <li key={index}>
+                        <a
+                          href={`/search?page=${element + 1}`}
+                          onClick={(e) => handleRedirect(e, element + 1)}
+                        >
+                          {element + 1}
+                        </a>
+                      </li>
                     ))}
                   <li>...</li>
                   {Array.from(Array(paginationEnd - 1).keys())
                     .slice(-2)
-                    .map((element) => (
-                      <li>{element + 1}&nbsp;</li>
+                    .map((element, index) => (
+                      <li key={index}>
+                        <a
+                          href={`/search?page=${element + 1}`}
+                          onClick={(e) => handleRedirect(e, element + 1)}
+                        >
+                          {element + 1}
+                        </a>
+                      </li>
                     ))}
                 </>
               );
             } else if (currentPage > 7 && paginationEnd - currentPage < 6) {
               return (
                 <>
-                  {Array.from(Array(3).keys()).map((element) => (
-                    <li>{element + 1}&nbsp;</li>
+                  {Array.from(Array(3).keys()).map((element, index) => (
+                    <li key={index}>
+                      <a
+                        href={`/search?page=${element + 1}`}
+                        onClick={(e) => handleRedirect(e, element + 1)}
+                      >
+                        {element + 1}
+                      </a>
+                    </li>
                   ))}
-                  <li>...&nbsp;</li>
+                  <li>...</li>
                   {Array.from(Array(paginationEnd - 1).keys())
                     .slice(currentPage - 3, currentPage - 1)
-                    .map((element) => (
-                      <li>{element + 1}&nbsp;</li>
+                    .map((element, index) => (
+                      <li key={index}>
+                        <a
+                          href={`/search?page=${element + 1}`}
+                          onClick={(e) => handleRedirect(e, element + 1)}
+                        >
+                          {element + 1}
+                        </a>
+                      </li>
                     ))}
-                  <li>
-                    <span>
-                      {currentPage < paginationEnd ? (
-                        <>{currentPage}&nbsp;</>
-                      ) : null}
-                    </span>
-                  </li>
+                  {currentPage < paginationEnd ? (
+                    <li>
+                      <a href={`/search?page=${currentPage}`}>
+                        <span>{currentPage}</span>
+                      </a>
+                    </li>
+                  ) : null}
                   {Array.from(Array(paginationEnd - 1).keys())
                     .slice(currentPage, paginationEnd - 1)
-                    .map((element) => (
-                      <li>{element + 1}&nbsp;</li>
+                    .map((element, index) => (
+                      <li key={index}>
+                        <a
+                          href={`/search?page=${element + 1}`}
+                          onClick={(e) => handleRedirect(e, element + 1)}
+                        >
+                          {element + 1}
+                        </a>
+                      </li>
                     ))}
                 </>
               );
             } else {
               return (
                 <>
-                  {Array.from(Array(3).keys()).map((element) => (
-                    <li>{element + 1}&nbsp;</li>
+                  {Array.from(Array(3).keys()).map((element, index) => (
+                    <li key={index}>
+                      <a
+                        href={`/search?page=${element + 1}`}
+                        onClick={(e) => handleRedirect(e, element + 1)}
+                      >
+                        {element + 1}
+                      </a>
+                    </li>
                   ))}
-                  <li>...&nbsp;</li>
+                  <li>...</li>
                   {Array.from(Array(paginationEnd - 1).keys())
                     .slice(currentPage - 3, currentPage - 1)
-                    .map((element) => (
-                      <li>{element + 1}&nbsp;</li>
+                    .map((element, index) => (
+                      <li key={index}>
+                        <a
+                          href={`/search?page=${element + 1}`}
+                          onClick={(e) => handleRedirect(e, element + 1)}
+                        >
+                          {element + 1}
+                        </a>
+                      </li>
                     ))}
                   <li>
-                    <span>{currentPage}</span>&nbsp;
+                    <a href={`/search?page=${currentPage}`}>
+                      <span>{currentPage}</span>
+                    </a>
                   </li>
                   {Array.from(Array(paginationEnd - 1).keys())
                     .slice(currentPage, currentPage + 2)
-                    .map((element) => (
-                      <li>{element + 1}&nbsp;</li>
+                    .map((element, index) => (
+                      <li key={index}>
+                        <a
+                          href={`/search?page=${element + 1}`}
+                          onClick={(e) => handleRedirect(e, element + 1)}
+                        >
+                          {element + 1}
+                        </a>
+                      </li>
                     ))}
-                  <li>...&nbsp;</li>
+                  <li>...</li>
                   {Array.from(Array(paginationEnd - 1).keys())
                     .slice(-2)
-                    .map((element) => (
-                      <li>{element + 1}&nbsp;</li>
+                    .map((element, index) => (
+                      <li key={index}>
+                        <a
+                          href={`/search?page=${element + 1}`}
+                          onClick={(e) => handleRedirect(e, element + 1)}
+                        >
+                          {element + 1}
+                        </a>
+                      </li>
                     ))}
                 </>
               );
