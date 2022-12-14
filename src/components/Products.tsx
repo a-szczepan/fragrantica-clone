@@ -12,6 +12,7 @@ export const Products = () => {
 
   useEffect(() => {
     setPage(Number(searchParams.get("page")));
+    window.scrollTo(0, 0);
   }, [searchParams]);
 
   useEffect(() => {
