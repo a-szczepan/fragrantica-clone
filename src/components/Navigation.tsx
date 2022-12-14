@@ -23,7 +23,7 @@ export const Navigation = ({ onClick }: Props) => {
         </li>
         <li className="divider"> </li>
       </ul>
-      <a className="browse-btn drawer-browse-btn" href="/search">
+      <a className="browse-btn drawer-browse-btn" href="/search?page=1">
         <button>Browse</button>
       </a>
     </nav>
