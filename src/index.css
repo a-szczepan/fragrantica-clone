@@ -118,6 +118,12 @@ hr {
   display: none;
 }
 
+#root,
+.landing-page {
+  display: flex;
+  flex-direction: column;
+}
+
 .logo {
   font-family: "Glamore";
   font-size: 2rem;
@@ -164,6 +170,12 @@ hr {
 .about-section .section-title,
 .sources-section .section-title {
   padding-top: 3rem;
+}
+
+.lp-content,
+.searchPage {
+  align-self: center;
+  max-width: 1400px;
 }
 
 .header-hero,
@@ -428,6 +440,7 @@ hr {
   display: flex;
   padding-top: 3.375rem;
   justify-content: center;
+  width: 100%;
 }
 
 .searchPage button {
@@ -604,7 +617,7 @@ input[type="search"]:focus + .separator {
   display: grid;
   justify-content: center;
   gap: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 1rem;
   grid-template-columns: 1fr;
 }
 
@@ -613,7 +626,6 @@ input[type="search"]:focus + .separator {
   color: #0c0c0c;
   display: flex;
   flex-direction: column;
-  max-width: 190px;
   justify-self: center;
   width: 100%;
   padding: 1rem 0;
@@ -693,6 +705,12 @@ input[type="search"]:focus + .separator {
 
 /* || Media queries */
 
+@media (min-width: 389px) {
+  .products-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /*Small devices (landscape phones, 576px and up)*/
 @media (min-width: 576px) {
   .modal {
@@ -732,7 +750,6 @@ input[type="search"]:focus + .separator {
   }
 
   .products-container {
-    padding: 1rem 15%;
   }
 }
 
@@ -760,7 +777,6 @@ input[type="search"]:focus + .separator {
 
   .products-container {
     grid-template-columns: repeat(4, 1fr);
-    padding: 1rem 0;
   }
 }
 

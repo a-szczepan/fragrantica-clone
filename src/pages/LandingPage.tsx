@@ -10,7 +10,7 @@ const perfume: string = require("../assets/icons/perfume.svg").default;
 
 export const LandingPage = () => {
   return (
-    <div>
+    <div className="landing-page">
       <div className="header-hero">
         <div className="header-text">
           <h1>
