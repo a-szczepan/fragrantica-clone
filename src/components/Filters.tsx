@@ -4,7 +4,7 @@ import { FilteringContext } from "../context/FilteringContextProvider";
 import { getBrands, getGroups } from "../utils/api";
 const arrowDown: string = require("../assets/icons/down.svg").default;
 const arrowUp: string = require("../assets/icons/up.svg").default;
-const gender: string[] = ["male", "female", "unisex"];
+const gender: string[] = ["women", "men", "unisex"];
 
 type Props = {
   isDesktop: boolean;
