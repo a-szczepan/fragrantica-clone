@@ -1,4 +1,7 @@
+import { Gender } from "../types/shared";
+
 const url = "https://json-server-test-zkjz.onrender.com";
+// const url = `http://localhost:3200`
 
 export const getBrands = async (): Promise<Response> => {
   const options: RequestInit = {
@@ -16,21 +19,27 @@ export const getGroups = async (): Promise<Response> => {
   return await fetch(`${url}/groups`, options);
 };
 
-export const getPerfumesPage = async (
+export const getPerfumes = async (
+  gender: Gender[],
+  brands: string[],
+  groups: string[],
   page: number,
   limit: number
 ): Promise<Response> => {
-  const options: RequestInit = {
-    method: "GET",
-    mode: "cors",
-  };
-  return await fetch(`${url}/perfumes?_page=${page}&_limit=${limit}`, options);
-};
+  const genderQuery =
+    gender.length > 0 ? `gender=${gender.join("&gender=")}` : "";
+  const brandsQuery =
+    brands.length > 0 ? `brand=${brands.join("&brand=")}` : "";
+  const groupsQuery =
+    groups.length > 0 ? `group=${groups.join("&group=")}` : "";
+  const pageQuery = page ? `&page=${page}&limit=${limit}` : "";
 
-export const getAllPerfumes = async (): Promise<Response> => {
   const options: RequestInit = {
     method: "GET",
     mode: "cors",
   };
-  return await fetch(`${url}/perfumes`, options);
+  return await fetch(
+    `${url}/perfumes/filter?${genderQuery}&${brandsQuery}&${groupsQuery}&${pageQuery}`,
+    options
+  );
 };
