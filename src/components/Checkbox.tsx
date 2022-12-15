@@ -17,10 +17,7 @@ export const Checkbox = ({ id, name, label }: Props) => {
     if (list.includes(label)) {
       setIsChecked(true);
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [context?.state.brand, context?.state.gender, context?.state.group]);
-
+  }, [context?.state, label, name]);
   function onChange(e: ChangeEvent<HTMLInputElement>) {
     const action = e.target.checked
       ? `ADD_${name.toUpperCase()}`
