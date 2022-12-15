@@ -1,4 +1,5 @@
 import { useEffect, useContext, ChangeEvent, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { FilteringContext } from "../context/FilteringContextProvider";
 import { ActionType } from "../types/shared";
 type Props = {
@@ -9,6 +10,7 @@ type Props = {
 
 export const Checkbox = ({ id, name, label }: Props) => {
   const context = useContext(FilteringContext);
+  const [, setSearchParams] = useSearchParams();
   const [isChecked, setIsChecked] = useState<boolean>(false);
 
   useEffect(() => {
@@ -29,6 +31,7 @@ export const Checkbox = ({ id, name, label }: Props) => {
       },
     });
     setIsChecked(e.target.checked);
+    setSearchParams({ page: String(1) });
   }
 
   return (

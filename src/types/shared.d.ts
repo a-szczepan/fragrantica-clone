@@ -61,3 +61,10 @@ export type Product = {
     base?: Note[];
   };
 };
+
+export type FilteringResponse = {
+  data: [];
+  page: number;
+  itemsPerPage: number;
+  total: number;
+};

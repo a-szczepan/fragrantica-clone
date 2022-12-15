@@ -1,31 +1,23 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getAllPerfumes } from "../utils/api";
+import { FilteringResponse } from "../types/shared";
 const left: string = require("../assets/icons/left.svg").default;
 const right: string = require("../assets/icons/right.svg").default;
 
 type Props = {
-  paginationLimit: number;
-  currentPage: number;
+  data: FilteringResponse;
 };
 
-export const Pagination = ({ paginationLimit, currentPage }: Props) => {
+export const Pagination = ({ data }: Props) => {
   const [, setSearchParams] = useSearchParams();
   const [paginationEnd, setPaginationEnd] = useState<number>(0);
 
   useEffect(() => {
-    const fetchAllPerfumes = async () => {
-      const res = await getAllPerfumes();
-      setPaginationEnd(
-        await res.json().then((doc) => Math.ceil(doc.length / paginationLimit))
-      );
-    };
-    fetchAllPerfumes();
-  }, [paginationLimit]);
+    setPaginationEnd(Math.ceil(data.total / data.itemsPerPage));
+  }, [data]);
 
   function handleRedirect(event: React.MouseEvent, page: number) {
     event.preventDefault();
-    console.log("tu", page);
     setSearchParams({ page: String(page) });
   }
 
@@ -33,10 +25,8 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
     <ul className="pagination">
       <li>
         <a
-          href={`/search?page=${currentPage > 1 ? currentPage - 1 : 1}`}
-          onClick={(e) =>
-            handleRedirect(e, currentPage > 1 ? currentPage - 1 : 1)
-          }
+          href={`/search?page=${data.page > 1 ? data.page - 1 : 1}`}
+          onClick={(e) => handleRedirect(e, data.page > 1 ? data.page - 1 : 1)}
         >
           <img src={left} alt="left arrow" />
         </a>
@@ -46,9 +36,9 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
           if (paginationEnd > 0 && paginationEnd <= 10) {
             return (
               <>
-                {currentPage > 1
+                {data.page > 1
                   ? Array.from(Array(paginationEnd - 1).keys())
-                      .slice(0, currentPage - 1)
+                      .slice(0, data.page - 1)
                       .map((element, index) => (
                         <li key={index}>
                           <a
@@ -60,15 +50,15 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
                         </li>
                       ))
                   : null}
-                {currentPage < paginationEnd ? (
+                {data.page < paginationEnd ? (
                   <li>
-                    <a href={`/search?page=${currentPage}`}>
-                      <span>{currentPage}</span>
+                    <a href={`/search?page=${data.page}`}>
+                      <span>{data.page}</span>
                     </a>
                   </li>
                 ) : null}
                 {Array.from(Array(paginationEnd - 1).keys())
-                  .slice(currentPage, paginationEnd - 1)
+                  .slice(data.page, paginationEnd - 1)
                   .map((element, index) => (
                     <li key={index}>
                       <a
@@ -82,11 +72,11 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
               </>
             );
           } else if (paginationEnd > 10) {
-            if (currentPage <= 7) {
+            if (data.page <= 7) {
               return (
                 <>
                   {Array.from(Array(7).keys())
-                    .slice(0, currentPage - 1)
+                    .slice(0, data.page - 1)
                     .map((element, index) => (
                       <li key={index}>
                         <a
@@ -98,12 +88,12 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
                       </li>
                     ))}
                   <li>
-                    <a href={`/search?page=${currentPage}`}>
-                      <span>{currentPage}</span>
+                    <a href={`/search?page=${data.page}`}>
+                      <span>{data.page}</span>
                     </a>
                   </li>
                   {Array.from(Array(7).keys())
-                    .slice(currentPage, 7)
+                    .slice(data.page, 7)
                     .map((element, index) => (
                       <li key={index}>
                         <a
@@ -129,7 +119,7 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
                     ))}
                 </>
               );
-            } else if (currentPage > 7 && paginationEnd - currentPage < 6) {
+            } else if (data.page > 7 && paginationEnd - data.page < 6) {
               return (
                 <>
                   {Array.from(Array(3).keys()).map((element, index) => (
@@ -144,7 +134,7 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
                   ))}
                   <li>...</li>
                   {Array.from(Array(paginationEnd - 1).keys())
-                    .slice(currentPage - 3, currentPage - 1)
+                    .slice(data.page - 3, data.page - 1)
                     .map((element, index) => (
                       <li key={index}>
                         <a
@@ -155,15 +145,15 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
                         </a>
                       </li>
                     ))}
-                  {currentPage < paginationEnd ? (
+                  {data.page < paginationEnd ? (
                     <li>
-                      <a href={`/search?page=${currentPage}`}>
-                        <span>{currentPage}</span>
+                      <a href={`/search?page=${data.page}`}>
+                        <span>{data.page}</span>
                       </a>
                     </li>
                   ) : null}
                   {Array.from(Array(paginationEnd - 1).keys())
-                    .slice(currentPage, paginationEnd - 1)
+                    .slice(data.page, paginationEnd - 1)
                     .map((element, index) => (
                       <li key={index}>
                         <a
@@ -191,7 +181,7 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
                   ))}
                   <li>...</li>
                   {Array.from(Array(paginationEnd - 1).keys())
-                    .slice(currentPage - 3, currentPage - 1)
+                    .slice(data.page - 3, data.page - 1)
                     .map((element, index) => (
                       <li key={index}>
                         <a
@@ -203,12 +193,12 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
                       </li>
                     ))}
                   <li>
-                    <a href={`/search?page=${currentPage}`}>
-                      <span>{currentPage}</span>
+                    <a href={`/search?page=${data.page}`}>
+                      <span>{data.page}</span>
                     </a>
                   </li>
                   {Array.from(Array(paginationEnd - 1).keys())
-                    .slice(currentPage, currentPage + 2)
+                    .slice(data.page, data.page + 2)
                     .map((element, index) => (
                       <li key={index}>
                         <a
@@ -245,7 +235,7 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
           href={`/search?page=${paginationEnd}`}
           onClick={(e) => handleRedirect(e, paginationEnd)}
         >
-          {paginationEnd === currentPage ? (
+          {paginationEnd === data.page ? (
             <span>{paginationEnd}</span>
           ) : (
             paginationEnd
@@ -255,12 +245,12 @@ export const Pagination = ({ paginationLimit, currentPage }: Props) => {
       <li>
         <a
           href={`/search?page=${
-            currentPage === paginationEnd ? paginationEnd : currentPage + 1
+            data.page === paginationEnd ? paginationEnd : data.page + 1
           }`}
           onClick={(e) =>
             handleRedirect(
               e,
-              currentPage === paginationEnd ? paginationEnd : currentPage + 1
+              data.page === paginationEnd ? paginationEnd : data.page + 1
             )
           }
         >
