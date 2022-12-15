@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useContext } from "react";
 import { useSearchParams } from "react-router-dom";
 import { getPerfumes } from "../utils/api";
@@ -27,7 +28,6 @@ export const Products = () => {
       window.scrollTo(0, 0);
     };
     fetchProducts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     JSON.stringify(context?.state.brand),
     JSON.stringify(context?.state.gender),
