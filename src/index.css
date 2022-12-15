@@ -541,6 +541,7 @@ input[type="checkbox"] {
 .mobile-view,
 .desktop-view {
   width: 100%;
+  min-height: 100vh;
 }
 
 .desktop-view {
@@ -747,9 +748,6 @@ input[type="search"]:focus + .separator {
 
   .option-wrapper {
     max-height: 17vh;
-  }
-
-  .products-container {
   }
 }
 
