@@ -8,15 +8,10 @@ import { FilteringResponse, Product } from "../types/shared";
 
 export const Products = () => {
   const context = useContext(FilteringContext);
+  const paginationLimit = 20;
   const [products, setProducts] = useState<FilteringResponse>();
-  const [paginationLimit] = useState<number>(20);
   const [searchParams] = useSearchParams();
   const [page, setPage] = useState<number>(1);
-
-  useEffect(() => {
-    setPage(Number(searchParams.get("page")));
-    window.scrollTo(0, 0);
-  }, [searchParams, context?.state]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -27,11 +22,19 @@ export const Products = () => {
         page,
         paginationLimit
       ).then((res) => res.json());
-      console.log(res);
       setProducts(res);
+      setPage(Number(searchParams.get("page")));
+      window.scrollTo(0, 0);
     };
     fetchProducts();
-  }, [page, paginationLimit, searchParams, context?.state]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    JSON.stringify(context?.state.brand),
+    JSON.stringify(context?.state.gender),
+    JSON.stringify(context?.state.group),
+    page,
+    searchParams,
+  ]);
 
   return (
     <div>

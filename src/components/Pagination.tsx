@@ -21,6 +21,19 @@ export const Pagination = ({ data }: Props) => {
     setSearchParams({ page: String(page) });
   }
 
+  function mapPaginationItems(item: number[]) {
+    return item.map((element, index) => (
+      <li key={index}>
+        <a
+          href={`/search?page=${element + 1}`}
+          onClick={(e) => handleRedirect(e, element + 1)}
+        >
+          {element + 1}
+        </a>
+      </li>
+    ));
+  }
+
   return (
     <ul className="pagination">
       <li>
@@ -75,48 +88,21 @@ export const Pagination = ({ data }: Props) => {
             if (data.page <= 7) {
               return (
                 <>
-                  {Array.from(Array(7).keys())
-                    .slice(0, data.page - 1)
-                    .map((element, index) => (
-                      <li key={index}>
-                        <a
-                          href={`/search?page=${element + 1}`}
-                          onClick={(e) => handleRedirect(e, element + 1)}
-                        >
-                          {element + 1}
-                        </a>
-                      </li>
-                    ))}
+                  {mapPaginationItems(
+                    Array.from(Array(7).keys()).slice(0, data.page - 1)
+                  )}
                   <li>
                     <a href={`/search?page=${data.page}`}>
                       <span>{data.page}</span>
                     </a>
                   </li>
-                  {Array.from(Array(7).keys())
-                    .slice(data.page, 7)
-                    .map((element, index) => (
-                      <li key={index}>
-                        <a
-                          href={`/search?page=${element + 1}`}
-                          onClick={(e) => handleRedirect(e, element + 1)}
-                        >
-                          {element + 1}
-                        </a>
-                      </li>
-                    ))}
+                  {mapPaginationItems(
+                    Array.from(Array(7).keys()).slice(data.page, 7)
+                  )}
                   <li>...</li>
-                  {Array.from(Array(paginationEnd - 1).keys())
-                    .slice(-2)
-                    .map((element, index) => (
-                      <li key={index}>
-                        <a
-                          href={`/search?page=${element + 1}`}
-                          onClick={(e) => handleRedirect(e, element + 1)}
-                        >
-                          {element + 1}
-                        </a>
-                      </li>
-                    ))}
+                  {mapPaginationItems(
+                    Array.from(Array(paginationEnd - 1).keys()).slice(-2)
+                  )}
                 </>
               );
             } else if (data.page > 7 && paginationEnd - data.page < 6) {
@@ -133,18 +119,12 @@ export const Pagination = ({ data }: Props) => {
                     </li>
                   ))}
                   <li>...</li>
-                  {Array.from(Array(paginationEnd - 1).keys())
-                    .slice(data.page - 3, data.page - 1)
-                    .map((element, index) => (
-                      <li key={index}>
-                        <a
-                          href={`/search?page=${element + 1}`}
-                          onClick={(e) => handleRedirect(e, element + 1)}
-                        >
-                          {element + 1}
-                        </a>
-                      </li>
-                    ))}
+                  {mapPaginationItems(
+                    Array.from(Array(paginationEnd - 1).keys()).slice(
+                      data.page - 3,
+                      data.page - 1
+                    )
+                  )}
                   {data.page < paginationEnd ? (
                     <li>
                       <a href={`/search?page=${data.page}`}>
@@ -152,18 +132,12 @@ export const Pagination = ({ data }: Props) => {
                       </a>
                     </li>
                   ) : null}
-                  {Array.from(Array(paginationEnd - 1).keys())
-                    .slice(data.page, paginationEnd - 1)
-                    .map((element, index) => (
-                      <li key={index}>
-                        <a
-                          href={`/search?page=${element + 1}`}
-                          onClick={(e) => handleRedirect(e, element + 1)}
-                        >
-                          {element + 1}
-                        </a>
-                      </li>
-                    ))}
+                  {mapPaginationItems(
+                    Array.from(Array(paginationEnd - 1).keys()).slice(
+                      data.page,
+                      paginationEnd - 1
+                    )
+                  )}
                 </>
               );
             } else {
@@ -180,48 +154,27 @@ export const Pagination = ({ data }: Props) => {
                     </li>
                   ))}
                   <li>...</li>
-                  {Array.from(Array(paginationEnd - 1).keys())
-                    .slice(data.page - 3, data.page - 1)
-                    .map((element, index) => (
-                      <li key={index}>
-                        <a
-                          href={`/search?page=${element + 1}`}
-                          onClick={(e) => handleRedirect(e, element + 1)}
-                        >
-                          {element + 1}
-                        </a>
-                      </li>
-                    ))}
+                  {mapPaginationItems(
+                    Array.from(Array(paginationEnd - 1).keys()).slice(
+                      data.page - 3,
+                      data.page - 1
+                    )
+                  )}
                   <li>
                     <a href={`/search?page=${data.page}`}>
                       <span>{data.page}</span>
                     </a>
                   </li>
-                  {Array.from(Array(paginationEnd - 1).keys())
-                    .slice(data.page, data.page + 2)
-                    .map((element, index) => (
-                      <li key={index}>
-                        <a
-                          href={`/search?page=${element + 1}`}
-                          onClick={(e) => handleRedirect(e, element + 1)}
-                        >
-                          {element + 1}
-                        </a>
-                      </li>
-                    ))}
+                  {mapPaginationItems(
+                    Array.from(Array(paginationEnd - 1).keys()).slice(
+                      data.page,
+                      data.page + 2
+                    )
+                  )}
                   <li>...</li>
-                  {Array.from(Array(paginationEnd - 1).keys())
-                    .slice(-2)
-                    .map((element, index) => (
-                      <li key={index}>
-                        <a
-                          href={`/search?page=${element + 1}`}
-                          onClick={(e) => handleRedirect(e, element + 1)}
-                        >
-                          {element + 1}
-                        </a>
-                      </li>
-                    ))}
+                  {mapPaginationItems(
+                    Array.from(Array(paginationEnd - 1).keys()).slice(-2)
+                  )}
                 </>
               );
             }
