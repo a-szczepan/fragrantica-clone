@@ -9,6 +9,7 @@ const initValue = {
   gender: [],
   brand: [],
   group: [],
+  keyword: "",
 };
 
 export const FilteringContext = React.createContext<{

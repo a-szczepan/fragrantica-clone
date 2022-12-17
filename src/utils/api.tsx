@@ -23,6 +23,7 @@ export const getPerfumes = async (
   gender: Gender[],
   brands: string[],
   groups: string[],
+  keyword: string,
   page: number,
   limit: number
 ): Promise<Response> => {
@@ -33,13 +34,14 @@ export const getPerfumes = async (
   const groupsQuery =
     groups.length > 0 ? `group=${groups.join("&group=")}` : "";
   const pageQuery = page ? `&page=${page}&limit=${limit}` : "";
+  const keywordQuery = keyword.length > 3 ? `keyword=${keyword}` : "";
 
   const options: RequestInit = {
     method: "GET",
     mode: "cors",
   };
   return await fetch(
-    `${url}/perfumes/filter?${genderQuery}&${brandsQuery}&${groupsQuery}&${pageQuery}`,
+    `${url}/perfumes/filter?${genderQuery}&${brandsQuery}&${groupsQuery}&${pageQuery}&${keywordQuery}`,
     options
   );
 };

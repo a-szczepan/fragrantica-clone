@@ -68,11 +68,23 @@ export function filteringReducer(state: State, action: Action): State {
         throw Error("group is undefined");
       }
     }
+    case "ADD_KEYWORD": {
+      const keyword = action.payload.keyword;
+      if (keyword) {
+        return {
+          ...state,
+          keyword,
+        };
+      } else {
+        throw Error("keyword is undefined");
+      }
+    }
     case "DELETE_FILTERS": {
       return {
         gender: [],
         brand: [],
         group: [],
+        keyword: "",
       };
     }
   }

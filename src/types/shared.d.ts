@@ -4,12 +4,14 @@ export type State = {
   gender: Gender[];
   brand: string[];
   group: string[];
+  keyword: string;
 };
 
 export type Payload = {
   gender?: Gender;
   brand?: string;
   group?: string;
+  keyword?: string;
 };
 
 export type ActionType =
@@ -19,7 +21,8 @@ export type ActionType =
   | "DELETE_BRAND"
   | "ADD_GROUP"
   | "DELETE_GROUP"
-  | "DELETE_FILTERS";
+  | "DELETE_FILTERS"
+  | "ADD_KEYWORD";
 
 export type Action = {
   type: ActionType;

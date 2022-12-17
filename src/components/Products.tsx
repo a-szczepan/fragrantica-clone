@@ -15,11 +15,12 @@ export const Products = () => {
   const [page, setPage] = useState<number>(1);
 
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchProductsByFilters = async () => {
       const res = await getPerfumes(
         context?.state.gender!,
         context?.state.brand!,
         context?.state.group!,
+        context?.state.keyword!,
         page,
         paginationLimit
       ).then((res) => res.json());
@@ -27,11 +28,12 @@ export const Products = () => {
       setPage(Number(searchParams.get("page")));
       window.scrollTo(0, 0);
     };
-    fetchProducts();
+    fetchProductsByFilters();
   }, [
     JSON.stringify(context?.state.brand),
     JSON.stringify(context?.state.gender),
     JSON.stringify(context?.state.group),
+    context?.state.keyword,
     page,
     searchParams,
   ]);
