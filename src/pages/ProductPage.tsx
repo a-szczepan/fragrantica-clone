@@ -1,3 +1,7 @@
 export const ProductPage = () => {
-  return <h1>Hello Product Page</h1>;
+  return (
+    <div className="product-page">
+      <h1>Hello Product Page</h1>
+    </div>
+  );
 };

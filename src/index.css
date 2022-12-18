@@ -180,7 +180,8 @@ hr {
 }
 
 .lp-content,
-.searchPage {
+.searchPage,
+.product-page {
   align-self: center;
   max-width: 1400px;
 }
@@ -189,6 +190,7 @@ hr {
 .header,
 .drawer,
 .lp-content,
+.product-page,
 .mobile-view,
 .desktop-view,
 .footer {
@@ -690,6 +692,10 @@ input[type="search"]:focus + .separator {
 }
 
 /* || Product Page */
+
+.product-page {
+  min-height: 100vh;
+}
 
 /* || Swiper */
 
