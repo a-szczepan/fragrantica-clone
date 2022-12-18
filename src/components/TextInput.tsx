@@ -1,10 +1,12 @@
 import { useState, useContext } from "react";
+import { useSearchParams } from "react-router-dom";
 import { FilteringContext } from "../context/FilteringContextProvider";
 import { ActionType } from "../types/shared";
 const search: string = require("../assets/icons/search.svg").default;
 
 export const TextInput = () => {
   const context = useContext(FilteringContext);
+  const [, setSearchParams] = useSearchParams();
   const [input, setInput] = useState<string>("");
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>): void {
@@ -15,6 +17,7 @@ export const TextInput = () => {
         keyword: input ? input : " ",
       },
     });
+    setSearchParams({ page: String(1) });
   }
 
   return (
@@ -25,6 +28,8 @@ export const TextInput = () => {
           className="search-input"
           placeholder="Search..."
           onChange={(e) => setInput(e.target.value)}
+          onFocus={(e) => (e.target.placeholder = " ")}
+          onBlur={(e) => (e.target.placeholder = "Search...")}
         ></input>
         <span className="separator"></span>
       </div>
