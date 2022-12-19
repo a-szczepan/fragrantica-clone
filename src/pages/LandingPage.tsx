@@ -5,10 +5,18 @@ import { mainstreamLogo } from "../assets/images/mainstreamLogo";
 import { nicheLogo } from "../assets/images/nicheLogo";
 import { AnimatedImage } from "../components/AnimatedImage";
 import { Counter } from "../components/Counter";
+import { useEffect } from "react";
 const arrow: string = require("../assets/icons/down.svg").default;
 const perfume: string = require("../assets/icons/perfume.svg").default;
 
 export const LandingPage = () => {
+  useEffect(() => {
+    const wakeUpServer = async () => {
+      await fetch(`https://json-server-test-zkjz.onrender.com/`);
+    };
+    wakeUpServer();
+  }, []);
+
   return (
     <div className="landing-page">
       <div className="header-hero">
