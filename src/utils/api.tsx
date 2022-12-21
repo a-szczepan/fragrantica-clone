@@ -45,3 +45,11 @@ export const getPerfumes = async (
     options
   );
 };
+
+export const getPerfumeById = async (id: number): Promise<Response> => {
+  const options: RequestInit = {
+    method: "GET",
+    mode: "cors",
+  };
+  return await fetch(`${url}/perfumes/${id}`, options);
+};
