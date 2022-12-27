@@ -32,25 +32,31 @@ export const ProductPage = () => {
           ></img>
           <div className="section-wrapper">
             <span className="title">Main accords</span>
-            {product.mainAccords.map((accord, index) => (
-              <AnimatedBar
-                key={index}
-                width={accord.value}
-                text={accord.accord}
-              />
-            ))}
+            <div className="content">
+              {product.mainAccords.map((accord, index) => (
+                <AnimatedBar
+                  key={index}
+                  width={accord.value}
+                  text={accord.accord}
+                />
+              ))}
+            </div>
           </div>
           <div className="section-wrapper">
             <span className="title">Notes</span>
-            <div>N1</div>
-            <div>N2</div>
-            <div>N3</div>
+            <div className="content">
+              <div>N1</div>
+              <div>N2</div>
+              <div>N3</div>
+            </div>
           </div>
           <div className="section-wrapper">
             <span className="title">Rating</span>
-            <div>N1</div>
-            <div>N2</div>
-            <div>N3</div>
+            <div className="content">
+              <div>N1</div>
+              <div>N2</div>
+              <div>N3</div>
+            </div>
           </div>
         </div>
       ) : (
