@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatedBar } from "../components/AnimatedBar";
+import { FragranceNote } from "../components/FragranceNote";
 import { Product } from "../types/shared";
 import { getPerfumeById } from "../utils/api";
 
@@ -45,9 +46,51 @@ export const ProductPage = () => {
           <div className="section-wrapper">
             <span className="title">Notes</span>
             <div className="content">
-              <div>N1</div>
-              <div>N2</div>
-              <div>N3</div>
+              {product.notes.top?.length! > 0 ? (
+                <>
+                  {" "}
+                  <span className="note-type">Top</span>{" "}
+                  <div className="notes-wrapper">
+                    {product.notes.top?.map((note, index) => (
+                      <FragranceNote
+                        key={index}
+                        image={note.photo}
+                        text={note.note}
+                      />
+                    ))}
+                  </div>
+                </>
+              ) : null}
+              {product.notes.heart?.length! > 0 ? (
+                <>
+                  {" "}
+                  <span className="note-type">Heart</span>{" "}
+                  <div className="notes-wrapper">
+                    {product.notes.heart?.map((note, index) => (
+                      <FragranceNote
+                        key={index}
+                        image={note.photo}
+                        text={note.note}
+                      />
+                    ))}
+                  </div>
+                </>
+              ) : null}
+              {product.notes.base?.length! > 0 ? (
+                <>
+                  {" "}
+                  <span className="note-type">Base</span>{" "}
+                  <div className="notes-wrapper">
+                    {product.notes.base?.map((note, index) => (
+                      <FragranceNote
+                        key={index}
+                        image={note.photo}
+                        text={note.note}
+                      />
+                    ))}{" "}
+                  </div>
+                </>
+              ) : null}
             </div>
           </div>
           <div className="section-wrapper">

@@ -728,17 +728,38 @@ input[type="search"]:focus + .separator {
   padding: 1rem 0;
 }
 
-.section-wrapper {
+.section-wrapper,
+.content {
   padding: 0.5rem 0;
 }
 
-.section-wrapper .title {
+.section-wrapper span.title {
   font-size: 1.625rem;
 }
 
-/* .section-wrapper .content {
-  padding: 1rem 0;
-} */
+.notes-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 1.2rem;
+  padding: 0.5rem 0;
+}
+
+.note-type {
+  font-size: 1.2rem;
+}
+
+.note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.note img {
+  width: 50px;
+  border-radius: 50%;
+  object-fit: contain;
+  padding: 10px 0;
+}
 
 /* || Swiper */
 
