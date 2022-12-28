@@ -761,6 +761,30 @@ input[type="search"]:focus + .separator {
   padding: 10px 0;
 }
 
+.rating {
+  display: flex;
+  align-items: center;
+}
+
+.rating .average {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 10px 0;
+  background-color: #d09c4e;
+}
+
+.rating-range,
+.rating-amount {
+  padding: 0.5rem;
+}
+
+.rating-amount {
+  color: #cfcaca;
+  font-size: 0.9rem;
+}
+
 /* || Swiper */
 
 .slide-wrapper {

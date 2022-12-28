@@ -96,9 +96,13 @@ export const ProductPage = () => {
           <div className="section-wrapper">
             <span className="title">Rating</span>
             <div className="content">
-              <div>N1</div>
-              <div>N2</div>
-              <div>N3</div>
+              <div className="rating">
+                <span className="average">{product.rating.average}</span>
+                <span className="rating-range">/ 5</span>
+                <span className="rating-amount">
+                  {product.rating.amount} ratings
+                </span>
+              </div>
             </div>
           </div>
         </div>
