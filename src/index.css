@@ -764,7 +764,7 @@ input[type="search"]:focus + .separator {
 .rating {
   display: flex;
   align-items: center;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 .rating .average {

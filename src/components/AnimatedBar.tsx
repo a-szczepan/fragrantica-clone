@@ -26,14 +26,14 @@ const loadByWidth = (width: number) => keyframes`
 const loadByHeight = (height: number) => keyframes`
     0% {
       height: 100px;
-      width: 13px;
-      background-color: #080810;
+      width: 12.7px;
+      background-color: #f1d7af;
     }
 
     100% { 
       height: ${100 - height}px;
-      width: 13px;
-      background-color: #080810;
+      width: 12.7px;
+      background-color: #f1d7af;
     }`;
 
 const Accord = styled.div<{ width: number; background: string }>`
@@ -63,6 +63,7 @@ export const AnimatedBar = ({ width, height, text }: Props) => {
           <div className="occasions">
             <Ratio height={height!} />
           </div>
+
           <img
             src={icons.find((icon) => icon.type === text)?.value}
             alt={text}
