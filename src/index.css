@@ -704,7 +704,12 @@ input[type="search"]:focus + .separator {
 
 .product-page {
   min-height: 100vh;
-  width: 100%;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .details-wrapper {
@@ -712,6 +717,7 @@ input[type="search"]:focus + .separator {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 
 .details-wrapper h1 {
@@ -728,9 +734,16 @@ input[type="search"]:focus + .separator {
   padding: 1rem 0;
 }
 
+.product-page .product-photo {
+  object-fit: contain;
+  background-color: white;
+  max-height: 450px;
+}
+
 .section-wrapper,
 .content {
   padding: 0.5rem 0;
+  width: 100%;
 }
 
 .section-wrapper span.title {

@@ -19,15 +19,16 @@ export const ProductPage = () => {
   });
 
   return (
-    <div>
+    <div className="product-page">
       {product?.name ? (
-        <div className="product-page">
+        <div>
           <div className="details-wrapper">
             <h1>{product.name}</h1>
             <span className="brand">{product.brand}</span>
             <span className="gender">{product.gender}</span>
           </div>
           <img
+            className="product-photo"
             src={product.photo}
             alt={`${product.name} ${product.brand}`}
           ></img>
