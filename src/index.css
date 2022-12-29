@@ -189,10 +189,14 @@ hr {
 }
 
 .lp-content,
-.searchPage,
-.product-page {
+.searchPage {
   align-self: center;
   max-width: 1400px;
+}
+
+.product-page {
+  align-self: center;
+  max-width: 992px;
 }
 
 .header-hero,
@@ -737,7 +741,8 @@ input[type="search"]:focus + .separator {
 .product-page .product-photo {
   object-fit: contain;
   background-color: white;
-  max-height: 450px;
+  max-height: 470px;
+  margin: 1rem 0rem;
 }
 
 .section-wrapper,
@@ -801,6 +806,7 @@ input[type="search"]:focus + .separator {
 
 .rating-occasions {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -859,6 +865,12 @@ input[type="search"]:focus + .separator {
   .products-container {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .product-accords {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+  }
 }
 
 /* Medium devices (tablets, 768px and up)*/
@@ -881,6 +893,10 @@ input[type="search"]:focus + .separator {
 
   .option-wrapper {
     max-height: 17vh;
+  }
+
+  .product-accords {
+    gap: 4rem;
   }
 }
 

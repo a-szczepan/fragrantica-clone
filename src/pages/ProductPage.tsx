@@ -21,27 +21,29 @@ export const ProductPage = () => {
   return (
     <div className="product-page">
       {product?.name ? (
-        <div>
+        <div style={{ width: "100%" }}>
           <div className="details-wrapper">
             <h1>{product.name}</h1>
             <span className="brand">{product.brand}</span>
             <span className="gender">{product.gender}</span>
           </div>
-          <img
-            className="product-photo"
-            src={product.photo}
-            alt={`${product.name} ${product.brand}`}
-          ></img>
-          <div className="section-wrapper">
-            <span className="title">Main accords</span>
-            <div className="content">
-              {product.mainAccords.map((accord, index) => (
-                <AnimatedBar
-                  key={index}
-                  width={accord.value}
-                  text={accord.accord}
-                />
-              ))}
+          <div className="product-accords">
+            <img
+              className="product-photo"
+              src={product.photo}
+              alt={`${product.name} ${product.brand}`}
+            ></img>
+            <div className="section-wrapper">
+              <span className="title">Main accords</span>
+              <div className="content">
+                {product.mainAccords.map((accord, index) => (
+                  <AnimatedBar
+                    key={index}
+                    width={accord.value}
+                    text={accord.accord}
+                  />
+                ))}
+              </div>
             </div>
           </div>
           <div className="section-wrapper">
