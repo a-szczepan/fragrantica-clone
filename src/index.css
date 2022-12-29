@@ -764,6 +764,7 @@ input[type="search"]:focus + .separator {
 .rating {
   display: flex;
   align-items: center;
+  padding-bottom: 1rem;
 }
 
 .rating .average {
@@ -783,6 +784,24 @@ input[type="search"]:focus + .separator {
 .rating-amount {
   color: #cfcaca;
   font-size: 0.9rem;
+}
+
+.rating-occasions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.occasions-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.occasions {
+  height: 100px;
+  width: 12.78px;
+  background-color: #d09c4e;
 }
 
 /* || Swiper */

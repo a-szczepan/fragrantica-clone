@@ -103,6 +103,11 @@ export const ProductPage = () => {
                   {product.rating.amount} ratings
                 </span>
               </div>
+              <div className="rating-occasions">
+                {Object.entries(product.occasions).map(([key, value]) => (
+                  <AnimatedBar text={key} height={value} />
+                ))}
+              </div>
             </div>
           </div>
         </div>
