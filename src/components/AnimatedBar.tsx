@@ -54,7 +54,14 @@ export const AnimatedBar = ({ width, height, text }: Props) => {
       {width ? (
         <>
           <span>{text}</span>
-          <Accord width={width!} background={colorMap[text]}>
+          <Accord
+            width={width!}
+            background={
+              Object.keys(colorMap).includes(text)
+                ? colorMap[text]
+                : colorMap["default"]
+            }
+          >
             {""}
           </Accord>
         </>
