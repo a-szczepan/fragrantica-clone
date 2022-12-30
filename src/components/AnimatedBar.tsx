@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { useInView } from "react-intersection-observer";
 import { colorMap } from "../utils/colorMap";
 const icons = [
   { type: "day", value: require("../assets/icons/day.svg").default },
@@ -49,6 +50,8 @@ const Ratio = styled.div<{ height: number }>`
 `;
 
 export const AnimatedBar = ({ width, height, text }: Props) => {
+  const { ref, inView } = useInView({ triggerOnce: true });
+
   return (
     <div>
       {width ? (
@@ -67,10 +70,9 @@ export const AnimatedBar = ({ width, height, text }: Props) => {
         </>
       ) : (
         <div className="occasions-wrapper">
-          <div className="occasions">
-            <Ratio height={height!} />
+          <div ref={ref} className="occasions">
+            {inView ? <Ratio height={height!} /> : null}
           </div>
-
           <img
             src={icons.find((icon) => icon.type === text)?.value}
             alt={text}
