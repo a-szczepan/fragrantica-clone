@@ -5,8 +5,12 @@ The project aims to create an alternative layout for the [**Fragrantica**](https
 
 **Stack:**
 
-- Frontend: - HTML + CSS - JavaScript + Typescript - React.js - RWD
-- [Backend](https://github.com/a-szczepan/json-server-test): - server mocked with [_json-server_](https://github.com/typicode/json-server)
+- Frontend: 		  <br/>- HTML + CSS
+		  <br/>-  JavaScript + Typescript
+		  <br/>- React.js
+		  <br/>- RWD
+- [Backend](https://github.com/a-szczepan/json-server-test): 
+      <br/> - server mocked with [_json-server_](https://github.com/typicode/json-server)
 
 The following list provides a description of the pages and functionality.
 |page | description |
