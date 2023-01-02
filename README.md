@@ -1,6 +1,6 @@
 # Fragrantica clone
 
-Deploy: https://fragrantica-clone.netlify.app/
+Deploy: https://fragrantica-clone.netlify.app/ <br/>
 The project aims to create an alternative layout for the [**Fragrantica**](https://www.fragrantica.com/) - with simplified features. Fragrantica is an online encyclopedia of perfumes.
 
 **Stack:**
