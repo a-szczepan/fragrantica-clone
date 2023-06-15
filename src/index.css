@@ -644,6 +644,16 @@ input[type="search"]:focus + .separator {
   grid-template-columns: 1fr;
 }
 
+.inner-text {
+  grid-column: span 12;
+  place-self: center;
+}
+
+.no-results {
+  display: flex;
+  justify-content: center;
+}
+
 .product-card {
   background-color: white;
   color: #0c0c0c;

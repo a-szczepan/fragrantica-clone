@@ -46,13 +46,13 @@ export const Products = () => {
             <ProductCard key={index} product={product} />
           ))
         ) : (
-          <div>wait</div>
+          <span className="inner-text">Wait for server response 😊</span>
         )}
       </div>
       {products?.data.length! > 0 ? (
         <Pagination data={products!} />
       ) : (
-        <span>No results</span>
+        <span className="no-results">No results</span>
       )}
     </div>
   );
